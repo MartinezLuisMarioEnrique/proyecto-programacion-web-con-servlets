@@ -1,0 +1,108 @@
+label.mensajeError {
+    color: red;
+    text-align: center;
+}
+
+body {
+	font-size: 0.9em;
+	background-color: #fff;
+}
+
+.Opcion > .enviar{
+	background-color:#800080;
+	color:white;	
+	font-size:20px;
+	font-weight:bold;
+	padding:10px 10px;
+}
+
+.Opcion{
+	text-align: center;
+	margin: 10px auto;
+}
+
+.texto{
+	margin: 10px auto;
+	padding: 0 10px 10px 10px;
+	text-align: center;
+}
+
+.etiqueta{
+	list-style: none;
+	line-height: 1.5em;
+	text-align: center;
+}
+/* Contenedor */
+
+.contenedor {
+	width: 1280px;
+	margin: 10px auto;
+	padding: 10px 10px 0 10px;
+	border: 1px solid #ccc;
+}
+
+/* Cabecera */
+
+.contenedor > .cabecera {
+	color: #fff;
+	background-color: #800080;
+	padding: 5px;
+}
+
+.contenedor > .cabecera h1 {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	text-shadow: 1px 1px 2px #ccc;
+}
+
+/* Menú */
+
+.contenedor > .menu {
+	color: #800080;
+	border-top: 1px solid #ccc;
+}
+
+.contenedor > .menu ul {
+	list-style: none;
+	line-height: 1.5em;
+	text-align: center;
+}
+
+.contenedor > .menu ul li {
+	display: inline;
+	margin-left: 20px;
+}
+.contenedor > .menu a:link, a:visited, a:hover, a:active {
+	color: #ff0080;
+	text-decoration: none;
+}
+
+/* Cuerpo */
+
+.contenedor > .cuerpo {
+	border-top: 1px solid #ccc;
+}
+
+.contenedor > .cuerpo h1 {
+	color: #800080;
+	font-size: 1.3em;
+	text-align: right;
+}
+
+/* Pie */
+
+.contenedor .pie {
+	color: 	#555;
+	border-top: 1px solid #ccc;
+	padding: 5px 0;
+	margin-top: 50px;
+}
+
+.contenedor .pie p {
+	padding: 0;
+	margin: 5px 0;
+	text-align: right;
+	font-size: 0.8em;
+	font-style: italic;
+}

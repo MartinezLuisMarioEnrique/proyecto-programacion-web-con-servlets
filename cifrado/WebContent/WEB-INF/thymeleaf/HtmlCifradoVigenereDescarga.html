@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Algoritmos de cifrado</title>
+<link rel="stylesheet" href="assets/css/normalize.css">
+<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body oncontextmenu="return false">
+	<div class="contenedor">
+		<div class="cabecera">
+			<h1>Cifrado Vigenere</h1>
+		</div>
+		<div class="menu">
+			<ul>
+				<li><a href="/cifrado/Vigenere.html">Inicio</a></li>
+			</ul>
+		</div>
+
+		<form action="CifradoVigenere" method="post"
+			class="formulario.nover {display:none;}">
+
+
+			<div class="etiqueta">
+				<label for="input-text">Mensaje:</label>
+			</div>
+
+			<div class="texto">
+				<textarea name="textarea" rows="5" cols="50" maxlength="2000"
+					th:text="${ datos.mensaje }"> </textarea>
+			</div>
+
+			<div>
+				<label class="mensajeError" for="input-text"></label>
+			</div>
+
+			<!-----------------------TEXTAREA MENSAJE CIFRADO---------------------->
+			<div class="etiqueta">
+				<label for="input-text">Mensaje cifrado:</label>
+			</div>
+
+			<div class="texto">
+				<textarea readonly name="textarea-cifrado" rows="5" cols="50"
+					th:text="${ datos.cifrado }">  </textarea>
+			</div>
+
+			<!----------------------CLAVE CIFRADO--------------------->
+			<div class="etiqueta">
+				<label for="clave-text">Clave: </label>
+			</div>
+
+			<div class="texto">
+				<input type="text" id="clave-text" name="text"
+					th:value="${ datos.desplazamiento }" placeholder="Ingresa la clave" />
+			</div>
+
+			<div>
+				<label class="mensajeError" for="input-number"></label>
+			</div>
+
+			<!----------------------BOTÓN--------------------->
+			<div class="etiqueta">
+				<input type="submit" value="Procesar" class="enviar" />
+			</div>
+
+
+			<!----------------------LISTBOX DESCARGA--------------------->
+			<div class="Opcion">
+				<input type="submit" name="formato" value="Descargar CSV"
+					class="enviar" /> <input type="submit" name="formato"
+					value="Descargar XML" class="enviar" /> <input type="submit"
+					name="formato" value="Descargar JSON" class="enviar" /> <input
+					type="submit" name="formato" value="Descargar XLS" class="enviar" />
+				<input type="submit" name="formato" value="Descargar XLSX"
+					class="enviar" /> <input type="submit" name="formato"
+					value="Descargar PDF" class="enviar" />
+			</div>
+
+			<!--
+
+En esta plantilla de Thymeleaf se tiene acceso a los siguientes objetos (**objetos globales**)
+
+*  #ctx:             contexto
+*  #vars:            variables de contexto
+*  #locale:          locale (internacionalización)
+*  #request:         HttpServletRequest
+*  #response:        HttpServletResponse
+*  #session:         HttpSession
+*  #servletContext:  ServletContext
+
+Para más información:
+
+  http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#expression-basic-objects
+  http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#appendix-a-expression-basic-objects
+
+-->
+
+			<div class="pie">
+				<p>
+					Tiempo transcurrido de actividad del servidor (uptime): <span
+						th:text="${ datos.uptime }"></span>
+				</p>
+				<p>
+					Fecha y hora actual del servidor: <span th:text="${ datos.fecha }"></span>
+					(<span th:text="${ datos.hora }"></span>)
+				</p>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

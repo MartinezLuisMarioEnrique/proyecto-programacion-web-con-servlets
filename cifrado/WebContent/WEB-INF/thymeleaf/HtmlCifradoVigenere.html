@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Algoritmos de cifrado</title>
+<link rel="stylesheet" href="assets/css/normalize.css">
+<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body oncontextmenu="return false">
+	<div class="contenedor">
+		<div class="cabecera">
+			<h1>Cifrado Vigenere</h1>
+		</div>
+		<div class="menu">
+			<ul>
+				<li><a href="/cifrado/Vigenere.html">Inicio</a></li>
+			</ul>
+		</div>
+
+		<form action="CifradoVigenere" method="post"
+			class="formulario.nover {display:none;}">
+
+
+			<div class="etiqueta">
+				<label for="input-text">Mensaje:</label>
+			</div>
+
+			<div class="texto">
+				<textarea name="textarea-mensaje" rows="5" cols="50"
+					th:text="${ datos.mensaje }"> </textarea>
+			</div>
+
+			<label class="mensajeError" for="input-number"
+				th:text="${ datos.error1 }"></label>
+
+			<!----------------------CLAVE CIFRADO--------------------->
+			<div class="etiqueta">
+				<label for="clave-text">Clave: </label>
+			</div>
+
+			<div class="texto">
+				<input type="text" id="clave-text" name="text"
+					placeholder="Ingresa la clave" th:value="${ datos.desplazamiento }" />
+			</div>
+
+			<label class="mensajeError" for="input-number"
+				th:text="${ datos.error2 }"></label>
+
+			<!----------------------BOTÓN--------------------->
+			<div class="etiqueta">
+				<input type="submit" value="Procesar" class="enviar" />
+			</div>
+
+			<!--
+
+En esta plantilla de Thymeleaf se tiene acceso a los siguientes objetos (**objetos globales**)
+
+*  #ctx:             contexto
+*  #vars:            variables de contexto
+*  #locale:          locale (internacionalización)
+*  #request:         HttpServletRequest
+*  #response:        HttpServletResponse
+*  #session:         HttpSession
+*  #servletContext:  ServletContext
+
+Para más información:
+
+  http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#expression-basic-objects
+  http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#appendix-a-expression-basic-objects
+
+-->
+
+			<div class="pie">
+				<p>
+					Tiempo transcurrido de actividad del servidor (uptime): <span
+						th:text="${ datos.uptime }"></span>
+				</p>
+				<p>
+					Fecha y hora actual del servidor: <span th:text="${ datos.fecha }"></span>
+					(<span th:text="${ datos.hora }"></span>)
+				</p>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
